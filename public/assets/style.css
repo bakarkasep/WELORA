@@ -1,0 +1,937 @@
+:root {
+    --bg-color: #fdfbf7;
+    --box-color: #e6ddd2;
+    --text-color: #333;
+    --accent-color: #000;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ini NAVBAR bang */
+.navbar {
+    padding: 20px 0;
+    background-color: var(--bg-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-menu a {
+    margin: 0 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #777;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- HERO --- */
+.hero {
+    margin-bottom: 40px;
+}
+
+.hero-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- CATEGORY LINKS --- */
+.category-summary {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cat-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cat-card {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.cat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- PRODUCT SECTIONS (The Beige Boxes) --- */
+.product-section {
+    padding: 40px 0;
+}
+
+.section-box {
+    background-color: var(--box-color);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom */
+    gap: 20px;
+}
+
+/* Mobile Responsive Main */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .cat-grid {
+        flex-direction: column;
+    }
+}
+
+.product-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.p-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.p-info h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.btn-shop {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 40px;
+}
+
+.about-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-logo {
+    flex: 1;
+    text-align: center;
+    font-family: var(--font-heading);
+}
+
+.about-logo h1 {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.about-text {
+    flex: 2;
+    font-size: 0.95rem;
+}
+
+.about-text h3 {
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #fafafa;
+    padding: 50px 0 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col a,
+.footer-col p {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* --- LOGIN PAGE --- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-split {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    background: white;
+}
+
+/* LEFT */
+.login-left {
+    flex: 1;
+    padding: 80px 60px;
+}
+
+.login-left h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+}
+
+.login-left h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+/* RIGHT */
+.login-right {
+    flex: 1;
+    background: #fff;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-right h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Override login-form agar soft */
+.login-form input {
+    background: #f1f1ff;
+    padding: 20px;
+    font-size: large;
+    border: none;
+    max-width: 500px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: large;
+}
+
+.login-form label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .login-split {
+        flex-direction: column;
+    }
+
+    .login-left,
+    .login-right {
+        padding: 40px;
+        text-align: center;
+    }
+}
+/* checkout */
+.checkout-page {
+    background-color: #f7f5f2; /* Warna Background Cream Muda */
+    padding: 60px 0;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+/* LAYOUT 2 KOLOM (GRID) */
+.checkout-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr; /* Kiri lebih lebar, Kanan lebih sempit */
+    gap: 40px; /* Jarak antar kolom */
+    align-items: start;
+}
+
+/* kolom kiri */
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    background-color: #e0e0e0; /* Warna Abu-abu Box */
+    border-radius: 15px;
+    padding: 20px 25px;
+}
+
+.form-group h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #b0b0b0;
+    padding-bottom: 10px;
+    color: #000;
+}
+
+.form-content input,
+.form-content select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px; /* Sudut tumpul input */
+    border: none;
+    background-color: #888; /* Warna Input Abu Gelap */
+    color: white;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.form-content input::placeholder {
+    color: #e0e0e0;
+}
+
+.row-2 {
+    display: flex;
+    gap: 15px;
+}
+.row-2 input {
+    flex: 1;
+}
+
+/* --- KOLOM KANAN (SUMMARY ITEM) --- */
+.col-right {
+    top: 20px;
+}
+
+.summary-card {
+    background-color: #cccccc; /* Warna Box Kanan Sedikit Lebih Gelap */
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.summary-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.summary-item img {
+    width: 50px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.s-info {
+    flex: 1;
+    font-size: 14px;
+}
+
+.s-info h4 {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.s-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #333;
+}
+
+.s-price {
+    font-weight: 600;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.btn-black-block {
+    display: block;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px; /* Tombol bulat lonjong */
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-black-block:hover {
+    background-color: #333;
+}
+
+/* RESPONSIVE: HP Tumpuk ke Bawah */
+@media (max-width: 900px) {
+    .checkout-layout {
+        grid-template-columns: 1fr; /* Jadi 1 kolom */
+    }
+}
+
+/* =========================================
+   CART PAGE STYLES
+   ========================================= */
+
+/* Layout Dasar Cart */
+.cart-section {
+    padding: 40px 0;
+    min-height: 80vh;
+    background-color: #f9f5f0; /* Warna background cream sesuai gambar */
+}
+
+.cart-container {
+    max-width: 900px; /* Lebar dibatasi agar rapi seperti di gambar */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Cart (Judul + Garis + Tombol Back) */
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.cart-title-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.cart-line {
+    height: 1px;
+    background-color: #d1d1d1;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.btn-back-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #1a1a1a;
+    border-radius: 50%;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.btn-back-circle:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* List Item Cart */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.cart-img-box {
+    width: 100px;
+    height: 100px;
+    background-color: #dcdcdc; /* Placeholder abu-abu seperti gambar */
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+.cart-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+/* Kontrol Kuantitas (+ -) */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-qty {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #1a1a1a;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+.qty-value {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Bagian Harga & Hapus (Kanan) */
+.cart-action-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.item-price {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+
+.btn-trash {
+    background: none;
+    border: 1px solid #e0e0e0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #888;
+    transition: 0.2s;
+}
+
+.btn-trash:hover {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Checkout Bar Bagian Bawah */
+.checkout-bar {
+    margin-top: 60px;
+    border: 1px solid #1a1a1a;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent; /* Sesuai gambar */
+    border-radius: 4px;
+}
+
+.checkout-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+/* Responsiveness untuk Cart Mobile */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-wrap: wrap;
+    }
+    .cart-action-right {
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-top: 15px;
+        height: auto;
+    }
+    .checkout-bar {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .checkout-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* =========================================
+   NOTA (RECEIPT) PAGE STYLES
+   ========================================= */
+
+/* Class khusus body untuk Nota agar tidak menimpa page lain */
+.nota-body {
+    background-color: #d3d3d3; /* Background abu-abu seperti screenshot */
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #1a1a1a;
+}
+
+.nota-wrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+.page-title {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+/* Kartu Utama */
+.nota-card {
+    background-color: #f4f1ea; /* Warna Cream sesuai screenshot */
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Ikon Sukses */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #98fb98; /* Hijau muda */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.success-icon svg {
+    color: #008000; /* Hijau tua untuk centang */
+    width: 40px;
+    height: 40px;
+}
+
+.nota-card h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.order-id {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* Baris Detail Pelanggan */
+.customer-info-bar {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.info-col h5 {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.info-col p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+/* List Item Produk */
+.item-list {
+    margin-bottom: 30px;
+}
+
+.nota-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.item-img {
+    width: 100px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+    text-align: left;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.item-qty {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Total Section */
+.total-section {
+    border-top: 1px solid #dcdcdc;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.total-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.total-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Tombol Button Nota */
+.btn-home {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-home:hover {
+    background-color: #333;
+}
+
+/* Footer copyright kecil */
+.copyright-text {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Responsiveness Nota */
+@media (max-width: 600px) {
+    .customer-info-bar {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .info-col {
+        width: 45%;
+    }
+    .nota-card {
+        padding: 20px;
+    }
+}

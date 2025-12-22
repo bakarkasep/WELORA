@@ -1,0 +1,39 @@
+{
+    "name": "Welora",
+    "short_name": "Welora",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F6F2ED",
+    "theme_color": "#DEDFE1",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "image/Logo/Logo 72x72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "image/Logo/Logo 192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "image/Logo/Logo 512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "image/",
+            "sizes": "2527x1285",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "image/",
+            "sizes": "459x1024",
+            "type": "image/png"
+        }
+    ]
+}
