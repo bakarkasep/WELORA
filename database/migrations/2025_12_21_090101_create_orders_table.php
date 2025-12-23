@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id(); // Primary Key Utama
+            $table->id(); 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('order_number');
             $table->string('customer_name');
@@ -17,10 +17,8 @@ return new class extends Migration
             $table->string('courier');
             $table->string('payment_method');
             
-            // Perbaikan: Pakai decimal, JANGAN id()
             $table->decimal('total_price', 15, 2); 
             
-            // Perbaikan: Menambahkan kolom status
             $table->string('status')->default('Paid'); 
 
             $table->timestamps();

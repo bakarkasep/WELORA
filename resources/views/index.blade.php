@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ asset('image/logo/favicon.png') }}" type="image/png">
     <title>Welora - Fashion Store</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
@@ -13,41 +14,43 @@
   </head>
   <body>
     <header class="navbar">
-      <div class="container nav-container">
-        <div class="logo">
-          <a href="{{ route('home') }}">
-            <span class="logo-text">W | WELORA</span>
-          </a>
-        </div>
-        <nav class="nav-menu">
-          <a href="#home">Home</a>
-          <a href="#collection">Collection</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+  <div class="container nav-container">
+    <div class="logo">
+      <a href="{{ route('home') }}">
+        <span class="logo-text">W | WELORA</span>
+      </a>
+    </div>
 
-          @if(Auth::check())
-             <div style="display: inline-flex; align-items: center; margin-left: 15px; gap: 10px;">
-                 <span style="font-weight: 600; color: #333; font-family: 'Poppins', sans-serif;">
-                    Hi, {{ Auth::user()->name }}
-                 </span>
-                 
-                 <form action="{{ route('logout') }}" method="POST" style="margin: 0;">
-                     @csrf
-                     <button type="submit" style="background:none; border:none; cursor:pointer; color: #cc0000; font-size: 0.8rem; font-weight: 600;">(LOGOUT)</button>
-                 </form>
-             </div>
-          @else
-             <a href="{{ route('login') }}" style="font-weight: 600;">Sign in</a>
-          @endif
-        </nav>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
 
-        <div class="nav-icons">
-          <a href="{{ route('cart') }}" style="font-weight: 600;" >
-            Cart
-          </a>
-        </div>
-      </div>
-    </header>
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+
+      @if(Auth::check())
+         <div class="auth-mobile">
+             <span class="user-name">Hi, {{ Auth::user()->name }}</span>
+             <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                 @csrf
+                 <button type="submit" class="btn-logout-mobile">(LOGOUT)</button>
+             </form>
+         </div>
+      @else
+         <a href="{{ route('login') }}" style="font-weight: 600;">Sign in</a>
+      @endif
+    </nav>
+
+    <div class="nav-icons">
+      <a href="{{ route('cart') }}" style="font-weight: 600;">Cart</a>
+    </div>
+  </div>
+</header>
 
     <section id="home" class="hero">
       <div class="container">
@@ -199,6 +202,18 @@
     </footer>
 
     <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+    document.querySelectorAll(".nav-menu a").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }));
+
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
           navigator.serviceWorker

@@ -78,11 +78,15 @@
                     <option value="BNI">BNI</option>
                     <option value="Mandiri">Mandiri</option>
                     <option value="OVO">OVO</option>
+                    <option value="QRIS">QRIS</option>
                 </select>
-                <div id="rek-box" style="display:none; margin-top:15px; background:#fff; padding:10px; border-radius:8px;">
-                    <small>Silakan transfer ke:</small>
-                    <h4 id="rek-bank" style="margin:0;">BCA</h4>
-                    <h3 id="rek-number" style="margin:0;">123-456-789</h3>
+                <div id="rek-box" style="display:none; margin-top:15px; background:#fff; padding:15px; border-radius:8px; text-align: center; border: 1px solid #ddd;">
+                <small style="display:block; margin-bottom:5px;">Silakan scan/transfer ke:</small>
+                 <div id="rek-text-wrapper">
+                  <h4 id="rek-bank" style="margin:0; color:#555;">BCA</h4>
+                 <h3 id="rek-number" style="margin:5px 0 0; color:#000;">123-456-789</h3>
+                </div>
+                 <img id="qris-image" src="{{ asset('image/qris.jpeg') }}" alt="QRIS Code" style="display:none; max-width: 200px; width: 100%; margin: 10px auto; border-radius: 8px;">
                 </div>
               </div>
             </div>
@@ -165,34 +169,45 @@
             });
         });
       }
+    function showRekening() {
+    var select = document.getElementById("payment_method");
+    var box = document.getElementById("rek-box");
+   
+    var textWrapper = document.getElementById("rek-text-wrapper");
+    var labelBank = document.getElementById("rek-bank");
+    var labelNumber = document.getElementById("rek-number");
+   
+    var imgQris = document.getElementById("qris-image");
+    
+    var selectedValue = select.value;
 
-    //rekening
-     function showRekening() {
-        var select = document.getElementById("payment_method");
-        var box = document.getElementById("rek-box");
-        var labelBank = document.getElementById("rek-bank");
-        var labelNumber = document.getElementById("rek-number");
+    var accounts = {
+        'BCA': '8210-9981-2234',
+        'BNI': '0981-2345-6789',
+        'Mandiri': '133-00-9876543-1',
+        'OVO': '0812-3456-7890'
+    };
+
+    if (selectedValue === 'QRIS') {
+        box.style.display = "block";
         
-        var selectedValue = select.value;
-
-        // DATA NOMOR REKENING 
-        var accounts = {
-            'BCA': '8210-9981-2234',
-            'BNI': '0981-2345-6789',
-            'Mandiri': '133-00-9876543-1',
-            'OVO': '0812-3456-7890'
-        };
-
-        if (selectedValue && accounts[selectedValue]) {
-            // Jika ada pilihan, tampilkan kotak dan ubah isinya
-            box.style.display = "block";
-            labelBank.innerText = "Bank " + selectedValue;
-            labelNumber.innerText = accounts[selectedValue];
-        } else {
-            // Jika pilih 'Pilih Metode', sembunyikan kotak
-            box.style.display = "none";
-        }
+        textWrapper.style.display = "none";
+        
+        imgQris.style.display = "block";
+        
+    } else if (selectedValue && accounts[selectedValue]) {
+        box.style.display = "block";
+       
+        textWrapper.style.display = "block";
+        labelBank.innerText = "Bank " + selectedValue;
+        labelNumber.innerText = accounts[selectedValue];
+       
+        imgQris.style.display = "none";
+        
+    } else {
+        box.style.display = "none";
     }
+}
     </script>
   </body>
 </html>

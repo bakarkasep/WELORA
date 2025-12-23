@@ -11,9 +11,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('price', 15, 2); // Pakai decimal biar aman
-            $table->string('image'); // Nama file gambar
-            $table->string('category'); // women, men, unisex
+            $table->decimal('price', 15, 2); 
+            $table->string('image'); 
+            $table->string('category'); 
             $table->timestamps();
         });
     }

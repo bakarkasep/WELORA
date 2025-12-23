@@ -9,7 +9,6 @@ class ProductSeeder extends Seeder
 {
     public function run()
     {
-        // Pastikan nama file gambar ini ada di folder public/image/gambarproduk/
         $products = [
             // Women
             ['name' => 'White Collar Dress', 'price' => 350000, 'image' => 'whitecollar.jpeg', 'category' => 'women'],
