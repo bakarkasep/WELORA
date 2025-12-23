@@ -1036,3 +1036,49 @@ img {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+@media screen and (max-width: 600px) {
+    .login-left,
+    .login-right {
+        padding: 30px 20px !important;
+    }
+
+    .login-left h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+
+    .login-left h2 {
+        font-size: 1.8rem !important;
+        margin-top: 5px;
+    }
+
+    .login-right h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .login-form input {
+        width: 100%;
+        font-size: 14px;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .login-form button {
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .login-page {
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
